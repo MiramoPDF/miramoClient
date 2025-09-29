@@ -1,4 +1,7 @@
 @ECHO OFF
 set PATH=%~d0%~p0;%PATH%
 echo %PATH%
-mmClient.exe -user mmUser -password mmUser -host demo.miramo.com -networked Y -warn 4 %*
+:: DEMO.MIRAMO.COM
+:: mmClient-demo.exe -user mmUser -password mmUser -host demo.miramo.com -networked Y -warn 4 %*
+:: DEV.MIRAMO.COM
+mmClient-dev.exe -user mmUser -password mmUser -networked Y -secure -port 443 -warn 4 -hostname dev.miramo.com %* 
