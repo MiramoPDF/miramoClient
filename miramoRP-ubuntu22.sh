@@ -6,7 +6,8 @@ if [[ "$OSTYPE" == "linux"* ]]; then
     SCRIPTPATH=`dirname $SCRIPT`
 
     export PATH=$SCRIPTPATH:$PATH
-    exec "$SCRIPTPATH/mmClient" -user mmUser -password mmUser -host demo.miramo.com -networked Y -warn 4 "$@"
+	chmod +x "$SCRIPTPATH/mmClient-ubuntu22.exe"
+    exec "$SCRIPTPATH/mmClient-ubuntu22.exe" -user mmUser -password mmUser  -networked Y -secure -port 443 -warn 4 -hostname dev.miramo.com "$@"
 else
         echo "$OSTYPE not supported"
 fi
